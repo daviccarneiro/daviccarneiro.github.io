@@ -26,16 +26,14 @@ const {
   <body>
     <div class="bg-base-100 drawer lg:drawer-open">
       <input id="my-drawer" type="checkbox" class="drawer-toggle" />
-      <div class="drawer-content bg-base-100">
+      <div class="drawer-content bg-base-100 flex flex-col min-h-screen">
         <Header title={SITE_TITLE} />
-        <div class="md:flex md:justify-center">
+        <div class="md:flex md:justify-center flex-grow">
           <main class="p-6 pt-10 lg:max-w-[1000px] max-w-[100vw]">
             <slot />
           </main>
         </div>
-      <div class="absolute bottom-0">
         <Footer />
-      </div>
       </div>
       {includeSidebar && <SideBar sideBarActiveItemID={sideBarActiveItemID} />}
     </div>
